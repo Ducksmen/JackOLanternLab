@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class JackOLantern {
     private String [][] faceFeatures;
 
@@ -16,14 +18,29 @@ public class JackOLantern {
         this.faceFeatures = faceFeatures;
     }
 
-    public void edit(String replace,int row, int column)
+    public void edit(String replace ,int row, int column)
     {
 
     }
 
     public void fill(String str)
     {
-
+        for (int i = 0;i<5;i++)
+        {
+            faceFeatures[i][0] = "";
+            for (int j = 0;j<7;j++)
+            {
+                faceFeatures[i][j] = str;
+            }
+        }
+        faceFeatures[0][0] = "";
+        faceFeatures[4][0] = "";
+        faceFeatures[4][1] = "";
+        faceFeatures[6][4] = "";
+        for (int i = 0;i<faceFeatures.length;i++)
+        {
+            System.out.println(Arrays.deepToString(faceFeatures[i]).replace("[","").replace("]","").replace(",",""));
+        }
     }
 
     public String toString()
