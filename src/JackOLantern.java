@@ -20,7 +20,18 @@ public class JackOLantern {
 
     public void edit(String replace ,int row, int column)
     {
-
+        faceFeatures[row][column] = replace;
+        faceFeatures[row][column + 2] = replace;
+        row = 3;
+        column = 1;
+        replace = "-";
+        for(int i = 0;i<5;i++) {
+            faceFeatures[row][column + i] = replace;
+        }
+        for (int i = 0;i<faceFeatures.length;i++)
+        {
+            System.out.println(Arrays.deepToString(faceFeatures[i]).replace("[","").replace("]","").replace(",",""));
+        }
     }
 
     public void fill(String str)
@@ -33,14 +44,10 @@ public class JackOLantern {
                 faceFeatures[i][j] = str;
             }
         }
-        faceFeatures[0][0] = "";
+        faceFeatures[0][0] = " ";
+        faceFeatures[0][6] = "";
         faceFeatures[4][0] = "";
         faceFeatures[4][1] = "";
-        faceFeatures[6][4] = "";
-        for (int i = 0;i<faceFeatures.length;i++)
-        {
-            System.out.println(Arrays.deepToString(faceFeatures[i]).replace("[","").replace("]","").replace(",",""));
-        }
     }
 
     public String toString()
